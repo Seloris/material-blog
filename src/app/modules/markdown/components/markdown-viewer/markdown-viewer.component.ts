@@ -1,25 +1,23 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
-import { MarkdownService } from '../../services/markdown.service';
+import { MarkdownManager } from '../../../../../libs/markdown/markdown-manager';
 
 @Component({
-  selector: 'app-markdown-viewer',
-  templateUrl: './markdown-viewer.component.html',
-  styleUrls: ['./markdown-viewer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-markdown-viewer',
+    templateUrl: './markdown-viewer.component.html',
+    styleUrls: ['./markdown-viewer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MarkdownViewerComponent implements OnInit, OnChanges {
 
-  @Input() markdownContent;
+    @Input() markdownContent;
 
-  markdownLines: string[];
+    constructor() { }
 
-  constructor(private mdService: MarkdownService) { }
+    ngOnInit() {
+    }
 
-  ngOnInit() {
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    // temp
-    this.markdownLines = this.mdService.getLines(this.markdownContent);
-  }
+    ngOnChanges(changes: SimpleChanges) {
+        const mdManager = new MarkdownManager();
+        mdManager.buildDocument(this.markdownContent);
+    }
 }
