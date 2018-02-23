@@ -1,29 +1,28 @@
-<div>
-  <mat-toolbar color="primary">
-    <span>
-      <mat-icon>mood</mat-icon>
-    </span>
-
-    <div class="spacer"></div>
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Option 1</button>
-    <button mat-menu-item>Option 2</button>
-  </mat-menu>
-
-  <mat-card>
-    <button mat-button>All</button>
-    <button mat-raised-button>Of</button>
-    <button mat-raised-button color="primary">The</button>
-    <button mat-raised-button color="accent">Buttons</button>
-  </mat-card>
-
-  <span class="done">
-    <button mat-fab>
-      <mat-icon>check circle</mat-icon>
-    </button>
+<mat-toolbar color="primary">
+  <span>
+    <mat-icon>mood</mat-icon>
   </span>
+
+  <div class="spacer"></div>
+  <button mat-icon-button [mat-menu-trigger-for]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+  <button mat-menu-item>Option 1</button>
+  <button mat-menu-item>Option 2</button>
+</mat-menu>
+
+<!-- <router-outlet></router-outlet> -->
+<div class="temp-container">
+  <textarea #markDownArea="ngModel" [(ngModel)]="currentMarkDown" rows="50" cols="100"></textarea>
+  <div>
+    <app-markdown-viewer [markdownContent]="markDownArea.value"></app-markdown-viewer>
+  </div>
 </div>
+
+<span class="done">
+  <button mat-fab>
+    <mat-icon>check circle</mat-icon>
+  </button>
+</span>
