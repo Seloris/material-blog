@@ -1,0 +1,7 @@
+<div class="markdown-document" *ngIf="mdDocument">
+    <div class="line" *ngFor="let entity of mdDocument.entities" [ngSwitch]="entity.type">
+        <app-md-text *ngSwitchCase="MdEntityTypeEnum.Text" [entity]="entity"></app-md-text>
+        <app-md-code *ngSwitchCase="MdEntityTypeEnum.Code" [entity]="entity"></app-md-code>
+        <app-md-header *ngSwitchCase="MdEntityTypeEnum.Header" [entity]="entity"></app-md-header>
+    </div>
+</div>

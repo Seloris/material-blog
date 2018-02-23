@@ -17,7 +17,7 @@
 <div class="temp-container">
   <textarea #markDownArea="ngModel" [(ngModel)]="currentMarkDown" rows="50" cols="100"></textarea>
   <div>
-    <app-markdown-viewer [markdownContent]="markDownArea.value"></app-markdown-viewer>
+    <app-md-viewer [markdownContent]="markDownArea.value"></app-md-viewer>
   </div>
 </div>
 

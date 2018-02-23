@@ -1,6 +1,6 @@
 export class MarkdownManager {
     private lines: string[] = [];
-    public mdDocument: MdDocument = new MdDocument();
+    private mdDocument: MdDocument = new MdDocument();
 
     private convertMarkdownToArray(md: string): string[] {
         if (!md) {
@@ -13,6 +13,7 @@ export class MarkdownManager {
     public buildDocument(markdownAsString: string) {
         const lines = this.convertMarkdownToArray(markdownAsString);
         this.buildDocumentFromLines(lines);
+        return this.mdDocument;
     }
 
 
@@ -41,7 +42,7 @@ export class MarkdownManager {
         });
     }
 
-    private mdEntityFactory(line: string): MdEntity {
+    private mdEntityFactory(line: string): IMdEntity {
         if (line.startsWith('#')) {
             return new MdHeader(line);
         }
@@ -58,21 +59,38 @@ export class MarkdownManager {
 
 
 export class MdDocument {
-    entities: MdEntity[] = [];
+    entities: IMdEntity[] = [];
 
-    public pushEntity(entity: MdEntity) {
+    public pushEntity(entity: IMdEntity) {
         this.entities.push(entity);
     }
 }
 
-export abstract class MdEntity {
-    public isComplete: boolean;
-    abstract getFormattedContent(): string;
+export enum MdEntityTypeEnum {
+    Text,
+    Header,
+    Code
 }
 
-export abstract class MdMultiLineEntity extends MdEntity {
-    constructor(protected content: string[]) {
-        super();
+export interface IMdEntity {
+    isComplete: boolean;
+    type: MdEntityTypeEnum;
+    content: string | string[];
+    getCleanedContent(): string | string[];
+}
+
+export abstract class MdEntity<T extends string | string[]> implements IMdEntity {
+    public isComplete: boolean;
+    abstract type: MdEntityTypeEnum;
+    constructor(public content: T) { }
+
+    abstract getCleanedContent(): T;
+
+}
+
+export abstract class MdMultiLineEntity extends MdEntity<string[]> {
+    constructor(content: string[]) {
+        super(content);
     }
 
     pushContent(line: string) {
@@ -83,38 +101,67 @@ export abstract class MdMultiLineEntity extends MdEntity {
     abstract isEndingLine(line: string): boolean;
 }
 
-export abstract class MdSingleLineEntity extends MdEntity {
-    constructor(protected content: string) {
-        super();
+export abstract class MdSingleLineEntity extends MdEntity<string> {
+    constructor(content: string) {
+        super(content);
         this.isComplete = true;
     }
 }
 
 
 export class MdText extends MdSingleLineEntity {
-    getFormattedContent(): string {
-        return this.content;
-    }
+    type = MdEntityTypeEnum.Text;
 
     constructor(content: string) {
         super(content);
     }
-}
 
-export class MdHeader extends MdText {
-    getFormattedContent(): string {
+    getCleanedContent(): string {
         return this.content;
     }
 }
 
-export class MdCode extends MdMultiLineEntity {
-    getFormattedContent(): string {
-        return this.content.join('-JOIN-');
+export class MdHeader extends MdText {
+    type = MdEntityTypeEnum.Header;
+    level = 0;
+
+    constructor(content: string) {
+        super(content);
+        const limit = Math.min(content.length, 5);
+        while (this.level < limit) {
+            if (content[this.level] !== '#') {
+                break;
+            }
+
+            this.level++;
+        }
     }
+    getCleanedContent(): string {
+        return this.content.substring(this.level);
+    }
+}
+
+
+// Currently only endling the multi line syntax
+export class MdCode extends MdMultiLineEntity {
+    type = MdEntityTypeEnum.Code;
+    language: string;
 
     constructor(firstLine: string) {
         super([firstLine]);
-        this.isComplete = this.isEndingLine(firstLine);
+        this.language = this.getLanguage(firstLine);
+    }
+
+    getCleanedContent(): string[] {
+        return this.content.slice(1, -1);
+    }
+
+    getLanguage(firstLine: string) {
+        const language = firstLine
+            .substring(3)
+            .trim();
+
+        return language || 'not specified';
     }
 
     isEndingLine(line: string) {

@@ -1,15 +1,17 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
-import { MarkdownManager } from '../../../../../libs/markdown/markdown-manager';
+import { MdDocument, MdEntityTypeEnum, MarkdownManager } from './../../../../../libs/markdown/markdown-manager';
 
 @Component({
-    selector: 'app-markdown-viewer',
-    templateUrl: './markdown-viewer.component.html',
-    styleUrls: ['./markdown-viewer.component.scss'],
+    selector: 'app-md-viewer',
+    templateUrl: './md-viewer.component.html',
+    styleUrls: ['./md-viewer.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MarkdownViewerComponent implements OnInit, OnChanges {
 
     @Input() markdownContent;
+    mdDocument: MdDocument;
+    MdEntityTypeEnum = MdEntityTypeEnum;
 
     constructor() { }
 
@@ -18,6 +20,6 @@ export class MarkdownViewerComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
         const mdManager = new MarkdownManager();
-        mdManager.buildDocument(this.markdownContent);
+        this.mdDocument = mdManager.buildDocument(this.markdownContent);
     }
 }
