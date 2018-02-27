@@ -1,3 +1,4 @@
+import { SandboxPageComponent } from './components/sandbox-page/sandbox-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,6 @@ import { MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatCa
 import { AppComponent } from './app.component';
 import { MarkdownModule } from './modules/markdown/markdown.module';
 import { FormsModule } from '@angular/forms';
-import { SandboxComponent } from './components/sandbox/sandbox.component';
 
 
 const materialModules = [MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatCardModule, MatToolbarModule];
@@ -23,7 +23,7 @@ const materialModules = [MatButtonModule, MatCheckboxModule, MatIconModule, MatM
     ],
     declarations: [
         AppComponent,
-        SandboxComponent
+        SandboxPageComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -19,6 +19,6 @@ export class MarkdownModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: MarkdownModule
-        }
+        };
     }
 }
