@@ -1,3 +1,5 @@
 <div class="code-block">
-    <pre><ng-container *ngFor="let line of entity.getCleanedContent()">{{line}}</ng-container></pre>
+    <div *ngFor="let line of entity.getCleanedContent()">
+        {{line}}
+    </div>
 </div>

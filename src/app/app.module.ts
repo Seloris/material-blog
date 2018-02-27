@@ -9,6 +9,7 @@ import { MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatCa
 import { AppComponent } from './app.component';
 import { MarkdownModule } from './modules/markdown/markdown.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 const materialModules = [MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatCardModule, MatToolbarModule];
@@ -17,6 +18,7 @@ const materialModules = [MatButtonModule, MatCheckboxModule, MatIconModule, MatM
     imports: [
         BrowserAnimationsModule,
         AppRoutingModule,
+        HttpClientModule,
         MarkdownModule.forRoot(),
         FormsModule,
         ...materialModules
@@ -25,7 +27,7 @@ const materialModules = [MatButtonModule, MatCheckboxModule, MatIconModule, MatM
         AppComponent,
         SandboxPageComponent
     ],
-    providers: [],
+    providers: [HttpClient],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

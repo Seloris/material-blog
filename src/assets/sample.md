@@ -5,6 +5,8 @@
 Un exemple de code en dessous :
 ``` json
 export class MdTextComponent extends MdEntityBaseComponent<MdText> {
+    private field:string;
+
 }
 ```
 
