@@ -1,11 +1,12 @@
 :host {
     display: block;
+    padding: 8px;
     border: solid 1px grey;
     background: lightblue;
     .code-block {
         border-left: 5px green;
-        pre {
-            padding: 10px;
+        >* {
+            white-space: pre;
         }
     }
 }

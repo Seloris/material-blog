@@ -21,5 +21,6 @@ export class MarkdownViewerComponent implements OnInit, OnChanges {
     ngOnChanges(changes: SimpleChanges) {
         const mdManager = new MarkdownManager();
         this.mdDocument = mdManager.buildDocument(this.markdownContent);
+        console.log(this.mdDocument.entities);
     }
 }

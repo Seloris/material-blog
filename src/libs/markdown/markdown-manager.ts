@@ -165,6 +165,6 @@ export class MdCode extends MdMultiLineEntity {
     }
 
     isEndingLine(line: string) {
-        return line.endsWith('```');
+        return line.startsWith('```');
     }
 }
