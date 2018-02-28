@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { MdEntityBaseComponent } from '../md-entity-base.component';
-import { MdHeader } from '@selo/md';
+import { MdHeader } from '@selo/markdown';
 
 @Component({
     selector: 'selo-md-header',

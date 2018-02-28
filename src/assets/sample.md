@@ -7,7 +7,14 @@ Un exemple de code en dessous :
 export class MdTextComponent extends MdEntityBaseComponent<MdText> {
     private field:string;
 
+    public doSomething(text:string){
+        this.field = "ok";
+
+    }
 }
 ```
 
-Du texte normal !
+# Exemples
+
+Maintenant une quote :
+> Je suis une quote !

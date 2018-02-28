@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef, OnChanges, AfterViewChecked } from '@angular/core';
 import { MdEntityBaseComponent } from '../md-entity-base.component';
-import { MdCode } from '@selo/md';
+import { MdCode } from '@selo/markdown';
 
 declare var hljs: any;
 

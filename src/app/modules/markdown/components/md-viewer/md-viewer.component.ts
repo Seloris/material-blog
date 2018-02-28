@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
-import { MdDocument, MdEntityTypeEnum, MarkdownManager } from './../../../../../libs/markdown/markdown-manager';
+import { MdDocument, MdEntityTypeEnum, MarkdownManager } from '@selo/markdown';
 
 @Component({
     selector: 'selo-md-viewer',

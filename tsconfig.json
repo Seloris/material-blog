@@ -7,6 +7,12 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@selo/markdown": [
+        "./libs/markdown"
+      ],
+    },
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
@@ -14,12 +20,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@selo/md": [
-        "./libs/markdown"
-      ],
-    },
+    ]
   }
 }
