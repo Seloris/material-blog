@@ -3,7 +3,7 @@
 ### Titre level 3
 
 Un exemple de code en dessous :
-``` json
+``` ts
 export class MdTextComponent extends MdEntityBaseComponent<MdText> {
     private field:string;
 

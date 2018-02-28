@@ -1,5 +1,11 @@
 <div class="temp-container">
-    <textarea #markDownArea="ngModel" [(ngModel)]="currentMarkDown" rows="50" cols="100"></textarea>
+    <div class="left">
+        <button (click)="useSample()" mat-raised-button color="primary">
+            <mat-icon>check</mat-icon> Use sample
+        </button>
+        <textarea #markDownArea="ngModel" [(ngModel)]="currentMarkDown" rows="50" cols="100"></textarea>
+
+    </div>
     <div>
         <app-md-viewer [markdownContent]="currentMarkDown"></app-md-viewer>
     </div>
