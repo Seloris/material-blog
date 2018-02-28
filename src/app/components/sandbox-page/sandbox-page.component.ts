@@ -16,7 +16,8 @@ export class SandboxPageComponent implements OnInit {
     }
 
     useSample() {
-        this.http.get('/assets/sample.md', { responseType: 'text' }).subscribe((sampleMd) => {
+        const path = 'assets/sample.md';
+        this.http.get(path, { responseType: 'text' }).subscribe((sampleMd) => {
             this.currentMarkDown = sampleMd;
         });
     }
