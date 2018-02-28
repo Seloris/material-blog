@@ -1,6 +1,7 @@
 :host {
     display: block;
-    .code-block {
-        border-left: 5px green;
+    code {
+        padding: 6px 24px;
+        border-radius: 8px;
     }
 }

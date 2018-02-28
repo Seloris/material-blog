@@ -1,7 +1,7 @@
 <div class="markdown-document" *ngIf="mdDocument">
     <div class="line" *ngFor="let entity of mdDocument.entities" [ngSwitch]="entity.type">
-        <app-md-text *ngSwitchCase="MdEntityTypeEnum.Text" [entity]="entity"></app-md-text>
-        <app-md-code *ngSwitchCase="MdEntityTypeEnum.Code" [entity]="entity"></app-md-code>
-        <app-md-header *ngSwitchCase="MdEntityTypeEnum.Header" [entity]="entity"></app-md-header>
+        <selo-md-text *ngSwitchCase="MdEntityTypeEnum.Text" [entity]="entity"></selo-md-text>
+        <selo-md-code *ngSwitchCase="MdEntityTypeEnum.Code" [entity]="entity"></selo-md-code>
+        <selo-md-header *ngSwitchCase="MdEntityTypeEnum.Header" [entity]="entity"></selo-md-header>
     </div>
 </div>

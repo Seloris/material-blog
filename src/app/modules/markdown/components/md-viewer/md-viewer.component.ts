@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, SimpleCha
 import { MdDocument, MdEntityTypeEnum, MarkdownManager } from './../../../../../libs/markdown/markdown-manager';
 
 @Component({
-    selector: 'app-md-viewer',
+    selector: 'selo-md-viewer',
     templateUrl: './md-viewer.component.html',
     styleUrls: ['./md-viewer.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

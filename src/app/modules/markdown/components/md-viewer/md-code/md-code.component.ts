@@ -5,7 +5,7 @@ import { MdCode } from '@selo/md';
 declare var hljs: any;
 
 @Component({
-    selector: 'app-md-code',
+    selector: 'selo-md-code',
     templateUrl: './md-code.component.html',
     styleUrls: ['./md-code.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

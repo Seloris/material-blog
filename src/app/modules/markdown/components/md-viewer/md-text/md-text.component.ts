@@ -3,7 +3,7 @@ import { MdEntityBaseComponent } from '../md-entity-base.component';
 import { MdText } from '@selo/md';
 
 @Component({
-    selector: 'app-md-text',
+    selector: 'selo-md-text',
     templateUrl: './md-text.component.html',
     styleUrls: ['./md-text.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
