@@ -1,17 +1,12 @@
 <ng-container class="line" [ngSwitch]="entity.level">
-    <h1 *ngSwitchCase="1">
-        {{entity.getCleanedContent()}}
+    <h1 *ngSwitchCase="1" [innerHTML]="formattedContent">
     </h1>
-    <h2 *ngSwitchCase="2">
-        {{entity.getCleanedContent()}}
+    <h2 *ngSwitchCase="2" [innerHTML]="formattedContent">
     </h2>
-    <h3 *ngSwitchCase="3">
-        {{entity.getCleanedContent()}}
+    <h3 *ngSwitchCase="3" [innerHTML]="formattedContent">
     </h3>
-    <h4 *ngSwitchCase="4">
-        {{entity.getCleanedContent()}}
+    <h4 *ngSwitchCase="4" [innerHTML]="formattedContent">
     </h4>
-    <h5 *ngSwitchCase="5">
-        {{entity.getCleanedContent()}}
+    <h5 *ngSwitchCase="5" [innerHTML]="formattedContent">
     </h5>
 </ng-container>
