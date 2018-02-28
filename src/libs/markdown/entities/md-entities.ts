@@ -1,7 +1,8 @@
 export enum MdEntityTypeEnum {
     Text,
     Header,
-    Code
+    Code,
+    Blockquote
 }
 
 export interface IMdEntity {

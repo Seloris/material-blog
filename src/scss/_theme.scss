@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import '../app/modules/markdown/components/md-viewer/md-blockquote/md-blockquote-theme.component.scss';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+// Available color palettes: https://www.google.com/design/spec/style/color.html
+$selo-primary: mat-palette($mat-indigo);
+$selo-accent: mat-palette($mat-blue-grey, 800);
+$selo-warn: mat-palette($mat-deep-orange);
+// Create the theme object (a Sass map containing all of the palettes).
+$selo-theme: mat-light-theme($selo-primary, $selo-accent, $selo-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($selo-theme);
+@include md-blockquote-theme($selo-theme);

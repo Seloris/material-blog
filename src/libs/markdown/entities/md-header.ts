@@ -16,7 +16,8 @@ export class MdHeader extends MdText {
             this.level++;
         }
     }
+
     getCleanedContent(): string {
-        return this.content.substring(this.level);
+        return this.content.substring(this.level).trim();
     }
 }

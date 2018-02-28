@@ -3,6 +3,7 @@ import { MdDocument } from './entities/md-document';
 import { MdHeader } from './entities/md-header';
 import { MdText } from './entities/md-text';
 import { MdCode } from './entities/md-code';
+import { MdBlockquote } from './entities/md-blockquote';
 
 export class MarkdownManager {
     private lines: string[] = [];
@@ -34,7 +35,6 @@ export class MarkdownManager {
                     this.mdDocument.pushEntity(entityBuilt);
                     entityBuilt = null;
                 }
-
             } else {
                 const newEntity = this.mdEntityFactory(line);
 
@@ -49,7 +49,17 @@ export class MarkdownManager {
     }
 
     private mdEntityFactory(line: string): IMdEntity {
-        if (line.startsWith('#')) {
+        if (line.length === 0) {
+            return new MdText('');
+        }
+
+        const firstChar = line[0];
+
+        if (firstChar === '>') {
+            return new MdBlockquote(line);
+        }
+
+        if (firstChar === '#') {
             return new MdHeader(line);
         }
 

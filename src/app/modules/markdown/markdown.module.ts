@@ -4,8 +4,9 @@ import { MdTextComponent } from './components/md-viewer/md-text/md-text.componen
 import { MdCodeComponent } from './components/md-viewer/md-code/md-code.component';
 import { MarkdownViewerComponent } from './components/md-viewer/md-viewer.component';
 import { MdHeaderComponent } from './components/md-viewer/md-header/md-header.component';
+import { MdBlockquoteComponent } from './components/md-viewer/md-blockquote/md-blockquote.component';
 
-const compExports = [MarkdownViewerComponent, MdTextComponent, MdCodeComponent, MdHeaderComponent];
+const compExports = [MarkdownViewerComponent, MdTextComponent, MdCodeComponent, MdHeaderComponent, MdBlockquoteComponent];
 
 
 @NgModule({

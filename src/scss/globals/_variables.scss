@@ -1,9 +1,16 @@
 $mainFont: 'Merriweather',
 serif;
 $baseFontSize: 16px;
-// Colors
+// RGB
+$gray-500:#818181;
 $black-700:#62535c;
 $black-900:#301d28;
-
-// 
+// Colors
 $backgroundColor: #fff;
+// Sizes
+$borderWidth-lg: 4px;
+// Font Weights
+$fontWeight-light:300;
+$fontWeight-regular:400;
+$fontWeight-semiBold:600;
+$fontWeight-bold:700;
