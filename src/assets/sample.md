@@ -14,12 +14,22 @@ export class MdTextComponent extends MdEntityBaseComponent<MdText> {
 }
 ```
 
+Ensuite on va mettre un peu de HTML :
+
+``` html
+<header>Salut</header>
+<div class="container">
+    <span>Test</span>
+</div>
+```
+
 # Exemples
 
 Maintenant une quote :
 > Je suis une quote !
 
 > Je suis très très __longue quote__, __très longue__, il me faut du __texte__, je ne sais pas quoi écrire. Donc j'écris des bêtises, encore et ~~encore et encore~~ et encore et encore et encore. Salut ça va ? Oui, je suis toujours dans une quote. En vrai j'aurai du mettre un Lorem Ipsum, mais c'est trop tard j'ai déjà écrit beaucoup trop de texte... C'est comme l'ascenseur, une fois que tu as as commencé à l'attendre....
+
 
 
 # Liste
