@@ -1,6 +1,5 @@
 @import '_variables';
-$soft-white: transparentize(#fff, 0.2);
-$softer-white: transparentize(#fff, 0.4);
+$white-soft: transparentize(#fff, 0.3);
 $search-height:50px;
 :host {
     display: flex;
@@ -15,9 +14,10 @@ $search-height:50px;
         .title {
             font-weight: $fontWeight-light;
             font-size: 0.9em;
+            color: $white-soft;
             .hashtag {
                 font-size: 1.2em;
-                font-weight: $fontWeight-bold;
+                color: #fff;
             }
         }
         .search-container {
