@@ -2,8 +2,10 @@ import { IMdEntity, MdMultiLineEntity, MdSingleLineEntity, MdEntity } from './en
 import { MdDocument } from './entities/md-document';
 import { MdHeader } from './entities/md-header';
 import { MdText } from './entities/md-text';
+import { MdList } from './entities/md-list';
 import { MdCode } from './entities/md-code';
 import { MdBlockquote } from './entities/md-blockquote';
+import { RegexConstants } from '../regex.constants';
 
 export class MarkdownManager {
     private lines: string[] = [];
@@ -65,6 +67,11 @@ export class MarkdownManager {
 
         if (line.startsWith('```')) {
             return new MdCode(line);
+        }
+
+        const match = RegexConstants.isLine.exec(line);
+        if (match) {
+            return new MdList(line, Math.min(match.length, 2));
         }
 
         return new MdText(line);
