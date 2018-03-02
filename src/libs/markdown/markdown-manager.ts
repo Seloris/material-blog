@@ -69,9 +69,10 @@ export class MarkdownManager {
             return new MdCode(line);
         }
 
-        const match = RegexConstants.isLine.exec(line);
+        const match = RegexConstants.isList.exec(line);
         if (match) {
-            return new MdList(line, Math.min(match.length, 2));
+            const level = match[1].length;
+            return new MdList(line, Math.min(level, 2));
         }
 
         return new MdText(line);

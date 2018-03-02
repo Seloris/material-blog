@@ -1,7 +1,25 @@
-:host {
-    display: block;
-    code {
-        padding: 6px 24px;
-        border-radius: 8px;
-    }
-}
+       :host {
+          display: block;
+          .code-block {
+              .code-title {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: -16px;
+                  font-size: 0.8em;
+                  font-style: italic;
+                  mat-icon {
+                      font-size: 1em;
+                      width: 14px;
+                      line-height: 10px;
+                      height: 10px;
+                  }
+                  span.title {
+                      margin-left: 4px;
+                  }
+              }
+              code {
+                  padding: 6px 24px;
+                  border-radius: 8px;
+              }
+          }
+      }

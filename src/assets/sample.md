@@ -3,13 +3,13 @@
 ### Titre level 3
 
 Un exemple **de code** encore du gras ici _dessous_ :
-``` ts
+
+``` ts Titre de l'exemple de code
 export class MdTextComponent extends MdEntityBaseComponent<MdText> {
     private field:string;
 
     public doSomething(text:string){
         this.field = "ok";
-
     }
 }
 ```
@@ -27,6 +27,10 @@ Maintenant une quote :
 - Item 1
  - Item 1.1
  - Item 1.2
+  - _Item 1.2.1_
 - Item 2
  - Item 2.1
-  - Item 2.2
+ - ~~Item 2.2~~
+  - Item 2.2.1
+  - **Item 2.2.2**
+- Item 3

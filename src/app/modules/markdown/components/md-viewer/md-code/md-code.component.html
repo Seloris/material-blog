@@ -1,3 +1,7 @@
 <div class="code-block">
+    <div class="code-title" *ngIf="entity.title">
+        <mat-icon>code</mat-icon>
+        <span class="title">{{entity.title}}</span>
+    </div>
     <pre><code #codeRef [class]="entity.language"><div *ngFor="let line of formattedContent">{{line}}</div></code></pre>
 </div>

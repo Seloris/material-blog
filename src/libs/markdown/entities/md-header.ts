@@ -1,5 +1,6 @@
 import { MdText } from './md-text';
 import { MdEntityTypeEnum } from './md-entities';
+import { RegexConstants } from '../../regex.constants';
 
 export class MdHeader extends MdText {
     type = MdEntityTypeEnum.Header;
@@ -7,14 +8,7 @@ export class MdHeader extends MdText {
 
     constructor(content: string) {
         super(content);
-        const limit = Math.min(content.length, 5);
-        while (this.level < limit) {
-            if (content[this.level] !== '#') {
-                break;
-            }
-
-            this.level++;
-        }
+        this.level = Math.min(RegexConstants.isHeader.exec(content)[1].length, 5);
     }
 
     getCleanedContent(): string {

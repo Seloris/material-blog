@@ -11,6 +11,6 @@ export class MdList extends MdText {
     }
 
     getCleanedContent(): string {
-        return cleanRegexMatch(this.content, RegexConstants.cleanLine);
+        return cleanRegexMatch(this.content, RegexConstants.cleanList);
     }
 }

@@ -7,6 +7,8 @@ import { MdHeaderComponent } from './components/md-viewer/md-header/md-header.co
 import { MdBlockquoteComponent } from './components/md-viewer/md-blockquote/md-blockquote.component';
 import { MdListComponent } from './components/md-viewer/md-list/md-list.component';
 
+import { MatIconModule } from '@angular/material/icon';
+
 const compExports = [
     MarkdownViewerComponent,
     MdTextComponent,
@@ -18,7 +20,8 @@ const compExports = [
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        MatIconModule
     ],
     declarations: [...compExports],
     exports: [...compExports]

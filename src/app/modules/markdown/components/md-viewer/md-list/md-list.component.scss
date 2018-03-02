@@ -1,0 +1,12 @@
+:host {
+    $liMargin: 12px;
+    .level-0 {}
+    .level-1 {
+        margin-left: $liMargin;
+        list-style: circle;
+    }
+    .level-2 {
+        margin-left: ($liMargin*2);
+        list-style: square;
+    }
+}
