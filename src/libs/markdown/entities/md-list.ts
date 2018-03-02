@@ -6,7 +6,7 @@ import { cleanRegexMatch } from '../../regex.helper';
 export class MdList extends MdText {
     type = MdEntityTypeEnum.List;
 
-    constructor(content: string, private level: number) {
+    constructor(content: string, public level: number) {
         super(content);
     }
 
