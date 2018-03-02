@@ -12,6 +12,9 @@
       "@selo/markdown": [
         "./libs/markdown"
       ],
+      "@selo/models": [
+        "./app/models"
+      ],
     },
     "target": "es5",
     "typeRoots": [

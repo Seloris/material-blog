@@ -11,6 +11,7 @@ import { MarkdownModule } from './modules/markdown/markdown.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { BlogService } from './services/blog.service';
 
 
 const materialModules = [
@@ -37,7 +38,7 @@ const materialModules = [
         SandboxPageComponent,
         HomePageComponent
     ],
-    providers: [HttpClient],
+    providers: [HttpClient, BlogService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

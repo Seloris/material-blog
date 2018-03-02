@@ -1,5 +1,9 @@
 # TO DO
-- progress bar top-line when reading 
+- progress bar top-line when reading ?
+- progress on (top-line/mat-toolbar) when loading
+ - make an applicationTransientService
+  - handle isLoading
+  - toaster / dialog / snackbar
 
 
 # TO CHECK

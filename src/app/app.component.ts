@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 
   showSearch() {
     this.isSearchOpen = true;
+    this.searchInput.nativeElement.focus();
   }
 
   hideSearch() {

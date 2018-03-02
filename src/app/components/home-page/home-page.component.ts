@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ArticlePreview } from '../../models/article-preview';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'selo-home-page',
@@ -7,10 +9,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent implements OnInit {
+  articles: ArticlePreview[];
 
-  constructor() { }
+
+  constructor(private blogService: BlogService) { }
 
   ngOnInit() {
+    this.blogService.getPreviews().subscribe(articles => {
+      this.articles = articles;
+    });
   }
 
 }
