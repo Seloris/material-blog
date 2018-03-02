@@ -1,14 +1,5 @@
 <div class="temp-container">
-    <div class="left">
-        <button (click)="useSample()" mat-raised-button color="primary">
-            <mat-icon>check</mat-icon> Use sample
-        </button>
-        <textarea #markDownArea="ngModel" [(ngModel)]="currentMarkDown" rows="50" cols="100"></textarea>
-
-    </div>
-    <div>
-        <selo-md-viewer [markdownContent]="currentMarkDown"></selo-md-viewer>
-    </div>
+    <selo-md-viewer [markdownContent]="currentMarkDown"></selo-md-viewer>
 </div>
 
 

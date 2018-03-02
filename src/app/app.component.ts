@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  @ViewChild('searchInput') searchInput: ElementRef;
+
+  isSearchOpen: boolean;
+  searchText: string;
 
   ngOnInit() {
+  }
+
+  showSearch() {
+    this.isSearchOpen = true;
+  }
+
+  hideSearch() {
+    this.isSearchOpen = false;
+    this.searchText = '';
   }
 }

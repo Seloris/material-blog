@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
     selector: 'app-sandbox-page',
     templateUrl: './sandbox-page.component.html',
@@ -13,6 +12,7 @@ export class SandboxPageComponent implements OnInit {
     constructor(private http: HttpClient) { }
 
     ngOnInit() {
+        this.useSample();
     }
 
     useSample() {
