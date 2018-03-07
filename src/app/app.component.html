@@ -1,29 +1,28 @@
 <!-- header -->
 <header>
-  <mat-toolbar color="primary">
-    <span class="title">blog
-      <span class="hashtag">SELORIS</span>
-    </span>
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+        <span class="title">blog
+            <span class="hashtag">SELORIS</span>
+        </span>
 
-    <div class="spacer"></div>
-    <button (click)="showSearch()" mat-icon-button>
-      <mat-icon>search</mat-icon>
-    </button>
-  </mat-toolbar>
-  <div class="search-container" [class.show]="isSearchOpen">
-    <div class="search-icon">
-      <mat-icon>search</mat-icon>
+        <div class="spacer"></div>
+        <button (click)="showSearch()" mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="search-container mat-elevation-z2" [class.show]="isSearchOpen">
+        <div class="search-icon">
+            <mat-icon>search</mat-icon>
+        </div>
+        <input #searchInput [(ngModel)]="searchText" placeholder="Chercher un article" />
+        <div class="clear">
+            <button (click)="hideSearch()" mat-icon-button>
+                <mat-icon>clear</mat-icon>
+            </button>
+        </div>
     </div>
-    <input #searchInput [(ngModel)]="searchText" placeholder="Chercher un article" />
-    <div class="clear">
-      <button (click)="hideSearch()" mat-icon-button>
-        <mat-icon>clear</mat-icon>
-      </button>
-    </div>
-  </div>
-  <div class="top-line clean-shadow"></div>
 </header>
 
 <div class="content">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

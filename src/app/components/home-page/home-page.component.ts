@@ -1,23 +1,26 @@
+import { NavService } from './../../services/nav.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ArticlePreview } from '../../models/article-preview';
 import { BlogService } from '../../services/blog.service';
+import { PostPreview } from '../../models/post-preview';
 
 @Component({
-  selector: 'selo-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'selo-home-page',
+    templateUrl: './home-page.component.html',
+    styleUrls: ['./home-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent implements OnInit {
-  articles: ArticlePreview[];
+    posts: PostPreview[];
 
+    constructor(private blogService: BlogService, private navService: NavService) { }
 
-  constructor(private blogService: BlogService) { }
+    ngOnInit() {
+        this.blogService.getPostPreviews().subscribe(posts => {
+            this.posts = posts;
+        });
+    }
 
-  ngOnInit() {
-    this.blogService.getPreviews().subscribe(articles => {
-      this.articles = articles;
-    });
-  }
-
+    goToPost(post: PostPreview) {
+        this.navService.goToPost(post.url);
+    }
 }

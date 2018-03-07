@@ -1,9 +1,14 @@
+import { PostPageComponent } from './components/post-page/post-page.component';
+import { NavService } from './services/nav.service';
 import { SandboxPageComponent } from './components/sandbox-page/sandbox-page.component';
 import { AppRoutingModule } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatCardModule, MatToolbarModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import {
+    MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule,
+    MatCardModule, MatToolbarModule, MatInputModule, MatFormFieldModule
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -36,9 +41,10 @@ const materialModules = [
     declarations: [
         AppComponent,
         SandboxPageComponent,
-        HomePageComponent
+        HomePageComponent,
+        PostPageComponent
     ],
-    providers: [HttpClient, BlogService],
+    providers: [HttpClient, BlogService, NavService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

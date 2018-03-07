@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@import 'variables';
+:host {
+    .post-containers {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        mat-card {
+            max-width: 80%;
+            @include mat-elevation-transition;
+            &:hover {
+                @include mat-elevation(10);
+                cursor: pointer;
+            }
+            width:400px;
+            margin:20px; 
+            // TO BE CLEANED
+            @media (max-width:500px) {
+                width: 100%;
+            }
+            @media (max-width:767px) and(min-width: 500px) {
+                width: 70%;
+                margin: 2%;
+            }
+            @media (max-width: 1092px) and (min-width: 767px) {
+                width: 42%;
+            }
+            mat-card-content {
+                text-align: left;
+                .title {
+                    font-weight: $fontWeight-bold;
+                }
+            }
+        }
+    }
+}

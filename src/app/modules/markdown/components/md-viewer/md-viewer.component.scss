@@ -1,3 +1,16 @@
+@import 'variables';
 :host {
+    $x-padding: 60px;
     text-align: justify;
+    .markdown-document {
+        max-width: 900px;
+        margin: auto;
+        padding: 24px $x-padding;
+        .line {
+            &.full-width {
+                margin-left: -$x-padding;
+                margin-right: -$x-padding;
+            }
+        }
+    }
 }

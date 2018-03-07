@@ -4,6 +4,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { SandboxPageComponent } from './components/sandbox-page/sandbox-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { PostPageComponent } from './components/post-page/post-page.component';
 
 const routes: Routes = [
     {
@@ -18,6 +19,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomePageComponent
+    },
+    {
+        path: 'posts/:postUrl',
+        component: PostPageComponent
     },
 ];
 
