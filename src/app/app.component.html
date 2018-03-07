@@ -1,28 +1,34 @@
 <!-- header -->
 <header>
-    <mat-toolbar color="primary" class="mat-elevation-z3">
-        <span class="title">blog
-            <span class="hashtag">SELORIS</span>
-        </span>
+  <mat-toolbar color="primary" class="mat-elevation-z3">
+    <span class="title">
+      <span>blog</span>
+      <span class="hashtag">SELORIS</span>
+      <span class="post-title animated" [class.fadeOutLeft]="!isPostTitleVisible" [class.fadeInLeft]="isPostTitleVisible">
+        {{postTitle}}
+      </span>
+    </span>
 
-        <div class="spacer"></div>
-        <button (click)="showSearch()" mat-icon-button>
-            <mat-icon>search</mat-icon>
-        </button>
-    </mat-toolbar>
-    <div class="search-container mat-elevation-z2" [class.show]="isSearchOpen">
-        <div class="search-icon">
-            <mat-icon>search</mat-icon>
-        </div>
-        <input #searchInput [(ngModel)]="searchText" placeholder="Chercher un article" />
-        <div class="clear">
-            <button (click)="hideSearch()" mat-icon-button>
-                <mat-icon>clear</mat-icon>
-            </button>
-        </div>
+    <div class="spacer"></div>
+    <button (click)="showSearch()" mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="search-container mat-elevation-z2" [class.show]="isSearchOpen">
+    <div class="search-icon">
+      <mat-icon>search</mat-icon>
     </div>
+    <input #searchInput [(ngModel)]="searchText" placeholder="Chercher un article" />
+    <div class="clear">
+      <button (click)="hideSearch()" mat-icon-button>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+  </div>
 </header>
 
-<div class="content">
+<div #scrollable (scroll)="onContentScroll($event)" class="content-scrollable">
+  <div class="content">
     <router-outlet></router-outlet>
+  </div>
 </div>

@@ -7,4 +7,7 @@
     .top-line {
         background-color: mat-color($accent);
     }
+    .post-title {
+        color: mat-color($accent, 800);
+    }
 }

@@ -6,7 +6,6 @@ $search-height:50px;
     flex-direction: column;
     header {
         z-index: 100;
-        position: fixed;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -21,6 +20,10 @@ $search-height:50px;
             .hashtag {
                 font-size: 1.2em;
                 color: #fff;
+            }
+            .post-title {
+                opacity: 0;
+                display: inline-block;
             }
         }
         .search-container {
@@ -55,8 +58,16 @@ $search-height:50px;
             }
         }
     }
-    .content {
-        padding: 12px;
-        margin-top: 70px;
+    .content-scrollable {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        .content {
+            padding: 12px;
+            flex: 1;
+        }
     }
 }
