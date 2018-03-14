@@ -1,0 +1,73 @@
+@import 'variables';
+$white-soft: transparentize(#fff, 0.3);
+$search-height:50px;
+:host {
+    display: flex;
+    flex-direction: column;
+    header {
+        z-index: 100;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .top-line {
+            width: 100%;
+            height: 4px;
+        }
+        .title {
+            font-weight: $fontWeight-light;
+            font-size: 0.9em;
+            color: $white-soft;
+            .hashtag {
+                font-size: 1.2em;
+                color: #fff;
+            }
+            .post-title {
+                opacity: 0;
+                display: inline-block;
+            }
+        }
+        .search-container {
+            background: #fff;
+            transition: height 0.3s;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 0;
+            overflow: hidden;
+            &.show {
+                height: $search-height;
+            }
+            input {
+                flex: 1;
+                background: transparent;
+                border: transparent !important;
+                font-weight: 200;
+                font-size: 1em;
+                padding: 0;
+                margin: 0;
+                outline: none;
+                box-shadow: none;
+            }
+            .clear,
+            .search-icon {
+                width: 50px;
+                text-align: center;
+            }
+            .search-icon {
+                height: 24px;
+            }
+        }
+    }
+    .content-scrollable {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        .content {
+            padding: 12px;
+            flex: 1;
+        }
+    }
+}
